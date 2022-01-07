@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "header.html" %}
+<body>
+<div class="container">
+<h1> To Do List </h1>
+<h4>Log in</h4>
+        <text id="message">{{ message }}</text><p>  </p>
+        <form  action="{{ url_for('verifylogin') }}" method="POST">
+            <input type="text" name="username" placeholder="Enter Username" autocomplete="off"><p>  </p>
+            <input type="password" name="password" id ="password" placeholder="Enter Password"><p>  </p>
+            <input type="checkbox" onclick="myFunction()">Show Password<p>  </p>
+            <script>
+                function myFunction()
+                {
+                  var x = document.getElementById("password");
+                  if (x.type === "password")
+                  {
+                    x.type = "text";
+                  }
+                  else
+                  {
+                    x.type = "password";
+                  }
+                }
+            </script>
+            <p> Don't have an account? <i><a href="{{ url_for('signup') }}">Sign Up</a></i></p>
+            <p>  </p><input type="submit" value="Log In">
+
+
+        </form>
+</div>
+</body>
+</html>

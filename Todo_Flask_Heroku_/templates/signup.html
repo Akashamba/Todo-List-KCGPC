@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "header.html" %}
+<body>
+<div class="container">
+<h1> To Do List </h1>
+<h4>Create an account</h4>
+        <text id="message">{{ message }}</text><p>  </p>
+        <form  action="{{ url_for('createaccount') }}" method="POST">
+            <input type="text" name="name" placeholder="Enter Name" autocomplete="off"><p>  </p>
+            <input type="text" name="username" placeholder="Enter Username" autocomplete="off"><p>  </p>
+            <input type="password" name="password" placeholder="Enter Password"><p>  </p>
+            <input type="password" name="cpassword" placeholder="Confirm Password"><p>  </p>
+            <p> Already have an account? <i><a href="{{ url_for('login') }}">Log In</a></i></p>
+            <p>  </p><input type="submit" value="Sign Up">
+        </form>
+</div>
+</body>
+</html>
